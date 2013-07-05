@@ -1,0 +1,16 @@
+@(elements: helper.FieldElements)
+
+@*****************************************************************************
+* Generate input according to twitter bootsrap rules for horizontal form 
+* http://twitter.github.io/bootstrap/base-css.html#forms 
+* Bootstrap version: 2.3.2
+******************************************************************************@
+
+<div class="control-group @if(elements.hasErrors) {error}">
+    <label class="control-label" for="@elements.id">@elements.label</label>
+    <div class="controls">
+        @elements.input
+        <span class="error">@elements.errors.mkString(", ")</span>
+        <span class="help-inline">@elements.infos.mkString(", ")</span>
+    </div>
+</div>
