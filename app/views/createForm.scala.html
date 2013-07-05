@@ -12,6 +12,12 @@
 		<fieldset>
 			<legend>Account information</legend>
 
+			@inputRadioGroup(
+				accountForm("language"),
+				options = Seq("en"->"English","fr"->"French"),
+				'_label -> "Language",
+				'_error -> accountForm("language").error.map(_.withMessage("select language")))			
+	
 			@inputText(accountForm("language"),   '_label -> "Language")
 			@inputText(accountForm("companyName"),   '_label -> "Company name")
 
