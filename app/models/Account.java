@@ -24,5 +24,8 @@ public class Account extends Model {
 	public String language;
 	
 	@Constraints.Required
+	public String accountType;
+	
+	@Constraints.Required
 	public String companyName;
 }

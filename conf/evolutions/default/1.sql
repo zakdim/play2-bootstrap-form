@@ -6,6 +6,7 @@
 create table account (
   id                        bigint not null,
   language                  varchar(255),
+  account_type              varchar(255),
   company_name              varchar(255),
   constraint pk_account primary key (id))
 ;

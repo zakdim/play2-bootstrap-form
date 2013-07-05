@@ -1,0 +1,6 @@
+section#main {
+    position: relative;
+    padding: 0em 2em;
+    border-bottom: 1px solid #ccc;
+    min-height: 600px;
+} 
