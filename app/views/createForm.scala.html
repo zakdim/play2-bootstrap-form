@@ -11,12 +11,20 @@
 		
 		<fieldset>
 			<legend>Account information</legend>
-
-			@inputRadioGroup(
-				accountForm("language"),
-				options = Seq("en"->"English","fr"->"French"),
-				'_label -> "Language",
-				'_error -> accountForm("language").error.map(_.withMessage("select language")))			
+	
+	        <div class="control-group @if(accountForm("language").hasErrors){ error }">
+    	    	<label class="control-label" for="language">Language</label>
+        		<div class="controls">
+            		<span class="buttonset" id="language">
+            			<label class="radio inline">
+                			<input type="radio" id="language_en" name="language" value="en" 
+            	   					@if(accountForm("language").value != null && accountForm("language").value == "en") { checked } else { if(accountForm("id").value == null) { checked } }>English</label>    
+                		<label class="radio inline">
+                			<input type="radio" id="language_fr" name="language" value="fr"
+                   					@if(accountForm("language").value != null && accountForm("language").value == "fr") { checked }>French</label>    
+                	</span>
+            	</div>
+        	</div>	
 	
 			@inputText(accountForm("accountType"),   '_label -> "Account type")	
 			@inputText(accountForm("companyName"),   '_label -> "Company name")
